@@ -1,0 +1,512 @@
+/* ============================================================
+   Academia FitLife — Folha de Estilos Principal
+   ============================================================ */
+
+:root {
+    --cor-primaria:     #1a1a2e;
+    --cor-secundaria:   #16213e;
+    --cor-destaque:     #e94560;
+    --cor-destaque-h:   #c73652;
+    --cor-fundo:        #f0f2f5;
+    --cor-branco:       #ffffff;
+    --cor-texto:        #2c2c2c;
+    --cor-texto-suave:  #666666;
+    --cor-borda:        #dee2e6;
+    --cor-sucesso-bg:   #d4edda;
+    --cor-sucesso-txt:  #155724;
+    --cor-erro-bg:      #f8d7da;
+    --cor-erro-txt:     #721c24;
+    --sombra:           0 2px 10px rgba(0, 0, 0, 0.1);
+    --raio:             8px;
+    --fonte:            'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fonte);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Container ─────────────────────────────────────────────── */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ── Cabeçalho ─────────────────────────────────────────────── */
+
+.cabecalho {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.logo h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--cor-branco);
+}
+
+.logo h1 span {
+    color: var(--cor-destaque);
+}
+
+/* ── Navegação ─────────────────────────────────────────────── */
+
+.nav-principal ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-principal > ul > li {
+    position: relative;
+}
+
+.nav-principal > ul > li > a,
+.nav-principal > ul > li > span {
+    display: block;
+    padding: 22px 16px;
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.nav-principal > ul > li:hover > a,
+.nav-principal > ul > li:hover > span {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-destaque);
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-secundaria);
+    min-width: 190px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    z-index: 100;
+    border-top: 2px solid var(--cor-destaque);
+    list-style: none;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px 16px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.submenu li a:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding-left: 22px;
+}
+
+/* ── Conteúdo principal ────────────────────────────────────── */
+
+.conteudo-principal {
+    flex: 1;
+}
+
+/* ── Seção Hero (página inicial) ───────────────────────────── */
+
+.hero {
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+    color: var(--cor-branco);
+    padding: 52px 0;
+}
+
+.hero h2 {
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* ── Corpo da página ───────────────────────────────────────── */
+
+.corpo-pagina {
+    padding: 32px 0;
+}
+
+/* ── Cards de estatísticas ─────────────────────────────────── */
+
+.grade-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.card-stat {
+    background: var(--cor-branco);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 20px 24px;
+    border-left: 4px solid var(--cor-destaque);
+}
+
+.card-stat .stat-rotulo {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--cor-texto-suave);
+}
+
+.card-stat .stat-valor {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    line-height: 1.1;
+    margin: 4px 0 2px;
+}
+
+.card-stat .stat-desc {
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+}
+
+/* ── Cards de acesso rápido ────────────────────────────────── */
+
+.grade-acoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card-acao {
+    background: var(--cor-branco);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 22px 24px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    border-left: 4px solid var(--cor-destaque);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: block;
+}
+
+.card-acao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-acao h3 {
+    font-size: 1rem;
+    color: var(--cor-primaria);
+    margin-bottom: 6px;
+}
+
+.card-acao p {
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+}
+
+/* ── Card painel ────────────────────────────────────────────── */
+
+.card {
+    background: var(--cor-branco);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 28px;
+    margin-bottom: 24px;
+}
+
+.card-cabecalho {
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--cor-borda);
+}
+
+.card-cabecalho h2 {
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+}
+
+.card-cabecalho p {
+    color: var(--cor-texto-suave);
+    margin-top: 4px;
+    font-size: 0.88rem;
+}
+
+/* ── Barra de título de página ─────────────────────────────── */
+
+.barra-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.barra-titulo h2 {
+    font-size: 1.45rem;
+    color: var(--cor-primaria);
+}
+
+/* ── Alertas ────────────────────────────────────────────────── */
+
+.alerta {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+}
+
+.alerta-sucesso {
+    background-color: var(--cor-sucesso-bg);
+    color: var(--cor-sucesso-txt);
+    border-color: #c3e6cb;
+}
+
+.alerta-erro {
+    background-color: var(--cor-erro-bg);
+    color: var(--cor-erro-txt);
+    border-color: #f5c6cb;
+}
+
+/* ── Formulários ────────────────────────────────────────────── */
+
+.grupo-campo {
+    margin-bottom: 18px;
+}
+
+.grupo-campo label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+    color: var(--cor-texto);
+}
+
+.grupo-campo label .obrigatorio {
+    color: var(--cor-destaque);
+    margin-left: 2px;
+}
+
+.campo {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-size: 0.93rem;
+    font-family: var(--fonte);
+    background-color: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.12);
+    background-color: var(--cor-branco);
+}
+
+textarea.campo {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.acoes-form {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* ── Botões ─────────────────────────────────────────────────── */
+
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.15s;
+    font-family: var(--fonte);
+}
+
+.btn-primario {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+}
+
+.btn-primario:hover {
+    background-color: var(--cor-destaque-h);
+    transform: translateY(-1px);
+}
+
+.btn-secundario {
+    background-color: #6c757d;
+    color: var(--cor-branco);
+}
+
+.btn-secundario:hover {
+    background-color: #5a6268;
+}
+
+.btn-contorno {
+    background-color: transparent;
+    border: 2px solid var(--cor-destaque);
+    color: var(--cor-destaque);
+}
+
+.btn-contorno:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+}
+
+/* ── Tabelas ────────────────────────────────────────────────── */
+
+.tabela-responsiva {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+thead th {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--cor-borda);
+    transition: background-color 0.15s;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+tbody td {
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+
+/* ── Etiquetas (badges) ─────────────────────────────────────── */
+
+.etiqueta {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.etiqueta-destaque {
+    background-color: rgba(233, 69, 96, 0.12);
+    color: var(--cor-destaque);
+}
+
+.etiqueta-neutra {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+/* ── Estado vazio ───────────────────────────────────────────── */
+
+.estado-vazio {
+    text-align: center;
+    padding: 52px 24px;
+    color: var(--cor-texto-suave);
+}
+
+.estado-vazio p {
+    margin-bottom: 18px;
+    font-size: 1rem;
+}
+
+/* ── Rodapé ─────────────────────────────────────────────────── */
+
+.rodape {
+    background-color: var(--cor-primaria);
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.82rem;
+}
+
+/* ── Responsividade ─────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .cabecalho .container {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 16px;
+        gap: 8px;
+    }
+
+    .linha-dupla {
+        grid-template-columns: 1fr;
+    }
+
+    .barra-titulo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+}
